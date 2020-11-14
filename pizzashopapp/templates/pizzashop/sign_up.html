@@ -23,5 +23,9 @@
   </head>
   <body>
     <h2>Register</h2>
+    <form method="POST">
+      {% csrf_token %} {{ user_form.as_p }} {{ pizzashop_form.as_p }}
+      <button type="submit">Sign up</button>
+    </form>
   </body>
 </html>
