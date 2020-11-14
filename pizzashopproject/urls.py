@@ -17,7 +17,16 @@ from django.contrib import admin
 from django.urls import path
 from pizzashopapp import views
 
+from django.contrib.auth.views import LoginView, LogoutView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+
+    path('pizzashop/sign-in/', LoginView.as_view(template_name='pizzashop/sign_in.html'),
+         name='pizzashop-sign-in'),
+    path('pizzashop/sign-out', LogoutView.as_view(next_page='/'),
+         name='pizzashop-sign-out'),
+    path('pizzashop/', views.pizzashop_home, name='pizzashop-home'),
+    path('pizzashop/sign-up', views.pizzashop_sign_up, name='pizzashop-sign-up'),
 ]
