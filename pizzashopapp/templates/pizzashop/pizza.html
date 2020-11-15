@@ -12,7 +12,16 @@
   <h5>{{ request.user.pizzashop.name }}</h5>
 </div>
 
-<a href="{% url 'pizzashop-account' %}">Profile</a>
--
-<span>Pizza</span>
+<div class="list-group">
+  <a href="{% url 'pizzashop-account' %}" class="list-group-item">Profile</a>
+  <span class="list-group-item">Pizza</span>
+</div>
+
+<div class="text-center">
+  <a
+    href="{% url 'pizzashop-sign-out' %}?next={{ request.path }}"
+    class="btn btn-red"
+    >Logout</a
+  >
+</div>
 {% endblock %} {% block page %} {% endblock %}
