@@ -1,9 +1,18 @@
-{% extends 'pizzashop/base.html' %} {% block page %}
-<h2>Pizza</h2>
-{% endblock %} {% block sidebar %} Hello, {{ request.user }}
-<hr />
+{% extends 'pizzashop/base.html' %} {% block sidebar %}
+<div class="text-center">
+  <img
+    class="rounded-circle"
+    src="{{ MEDIA_URL }}{{ request.user.pizzashop.logo }}"
+    width="70"
+    height="70"
+  />
+  <br />
+  <br />
+  <h4>Hello, {{ request.user.get_full_name }}</h4>
+  <h5>{{ request.user.pizzashop.name }}</h5>
+</div>
 
 <a href="{% url 'pizzashop-account' %}">Profile</a>
 -
-<a href="{% url 'pizzashop-pizza' %}">Pizza</a>
-{% endblock %}
+<span>Pizza</span>
+{% endblock %} {% block page %} {% endblock %}

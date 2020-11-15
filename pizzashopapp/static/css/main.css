@@ -1,0 +1,41 @@
+.bg-ruby {
+  background-color: #7b2324;
+}
+
+.btn-red {
+  color: white;
+  background-color: #e21e35;
+}
+
+.btn-red:hover,
+.btn-red:focus {
+  color: white;
+  background-color: #ec4d57;
+}
+
+/* SIDE BAR */
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  background-color: #7b2324;
+  overflow: auto;
+}
+
+/* SIDE BAR - HEADER */
+.sidebar > div:first-child {
+  padding: 30px 10px;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #3f1e1e;
+}
+
+.sidebar > div:first-child > h4 {
+  color: #e0deeb;
+}
+
+.sidebar > div:first-child > h5 {
+  color: #ffffff;
+}
